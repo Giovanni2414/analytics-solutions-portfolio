@@ -240,6 +240,223 @@ inferenciaTarget1 = html.Div([
         ])
 ])
 
+inferenciaTarget3 = html.Div([
+    html.Div([
+        html.H1("Aceptación de Campaña")
+    ], style={
+        "background-image": "https://img.freepik.com/vector-premium/tienda-productos-organicos-supermercado_182089-263.jpg?w=2000"}),
+    html.Div([
+        html.Div([
+            dbc.Label("Año de nacimiento", html_for="Year_Birth"),
+            dbc.Input(type="text", id="Year_Birth", placeholder="Ingrese el año de nacimiento")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Nivel de educación", html_for="Education"),
+            dbc.Select(
+                id="Education",
+                options=[
+                    {"label": "Graduation", "value": 1},
+                    {"label": "PhD", "value": 2},
+                    {"label": "Master", "value": 3},
+                    {"label": "2n Cycle", "value": 4},
+                    {"label": "Basic", "value": 5}
+                ],
+            )
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Estatus Marital", html_for="Marital_Status"),
+            dbc.Select(
+                id="Marital_Status",
+                options=[
+                    {"label": "Married", "value": 1},
+                    {"label": "Together", "value": 2},
+                    {"label": "Single", "value": 3},
+                    {"label": "Divorced", "value": 4},
+                    {"label": "Widow", "value": 5},
+                    {"label": "Alone", "value": 6},
+                    {"label": "Absurd", "value": 7},
+                    {"label": "YOLO", "value": 8}
+                ],
+            )
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Ingresos", html_for="Income"),
+            dbc.Input(type="text", id="Income", placeholder="Ingrese los ingresos mensuales")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Niños en casa", html_for="Kidhome"),
+            dbc.Input(type="text", id="Kidhome", placeholder="Ingrese la cantidad de niños del hogar")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Adolecentes en casa", html_for="Teenhome"),
+            dbc.Input(type="text", id="Teenhome", placeholder="Ingrese la cantidad de adolecentes del hogar")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Dias desde la última visita", html_for="Recency"),
+            dbc.Input(type="text", id="Recency", placeholder="Ingrese la cantidad de días desde su últimavisita")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gastos en vinos", html_for="MntWines"),
+            dbc.Input(type="text", id="MntWines", placeholder="Ingrese el monto del gasto en vinos")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en frutas", html_for="MntFruits"),
+            dbc.Input(type="text", id="MntFruits", placeholder="Ingrese el monto del gasto en frutas")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en carnes", html_for="MntMeatProducts"),
+            dbc.Input(type="text", id="MntMeatProducts", placeholder="Ingrese el monto del gasto en carnes")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en pescado", html_for="MntFishProducts"),
+            dbc.Input(type="text", id="MntFishProducts",
+                      placeholder="Ingrese el monto del gasto en productos de pescado")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en dulces", html_for="MntSweetProducts"),
+            dbc.Input(type="text", id="MntSweetProducts",
+                      placeholder="Ingrese el monto del gasto en productos dulces")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en productos premium", html_for="MntGoldProds"),
+            dbc.Input(type="text", id="MntGoldProds",
+                      placeholder="Ingrese el monto del gasto en productos premium")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en productos en oferta", html_for="MntDealsPurchases"),
+            dbc.Input(type="text", id="MntDealsPurchases",
+                      placeholder="Ingrese el monto del gasto en productos en oferta")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Compras por pagina web", html_for="NumWebPurchases"),
+            dbc.Input(type="text", id="NumWebPurchases",
+                      placeholder="Ingrese la cantidad de compras realizadas por pagina web")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Compras por catálogo", html_for="NumCatalogPurchases"),
+            dbc.Input(type="text", id="NumCatalogPurchases",
+                      placeholder="Ingrese la cantidad de compras realizadas por catálogo")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Compras por tienda fisica", html_for="NumStorePurchases"),
+            dbc.Input(type="text", id="NumStorePurchases",
+                      placeholder="Ingrese la cantidad de compras realizadas por tienda fisica")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Visitas web", html_for="NumWebVisitsMonth"),
+            dbc.Input(type="text", id="NumWebVisitsMonth",
+                      placeholder="Ingrese la cantidad de visitas web por mes")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Campaña número 3 aceptada previamente?", html_for="AcceptedCmp3"),
+            dbc.Select(
+                id="AcceptedCmp3",
+                options=[
+                    {"label": "Si", "value": 1},
+                    {"label": "No", "value": 0}
+                ],
+            )
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Campaña número 4 aceptada previamente?", html_for="AcceptedCmp4"),
+            dbc.Select(
+                id="AcceptedCmp4",
+                options=[
+                    {"label": "Si", "value": 1},
+                    {"label": "No", "value": 0}
+                ],
+            )
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Campaña número 5 aceptada previamente?", html_for="AcceptedCmp5"),
+            dbc.Select(
+                id="AcceptedCmp5",
+                options=[
+                    {"label": "Si", "value": 1},
+                    {"label": "No", "value": 0}
+                ],
+            )
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Campaña número 1 aceptada previamente?", html_for="AcceptedCmp1"),
+            dbc.Select(
+                id="AcceptedCmp1",
+                options=[
+                    {"label": "Si", "value": 1},
+                    {"label": "No", "value": 0}
+                ],
+            )
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Campaña número 2 aceptada previamente?", html_for="AcceptedCmp2"),
+            dbc.Select(
+                id="AcceptedCmp2",
+                options=[
+                    {"label": "Si", "value": 1},
+                    {"label": "No", "value": 0}
+                ],
+            )
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Reclamos", html_for="Complain"),
+            dbc.Input(type="text", id="Complain",
+                      placeholder="Ingrese la cantidad de reclamos hechos previamente")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Ingreso por contacto", html_for="Z_CostContact"),
+            dbc.Input(type="text", id="Z_CostContact",
+                      placeholder="Ingrese el costo por contactar al cliente")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Retorno de contacto", html_for="Z_Revenue"),
+            dbc.Input(type="text", id="Z_Revenue",
+                      placeholder="Ingrese el retorno monetario por contactar al cliente")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Button("Predecir aceptación de campaña", id="submitCampaignAceptation", n_clicks=0, color="secondary",
+                       className="me-1")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+
+        ], id="div-response-campaign-aceptation", style={"padding-top": "20px"}),
+        html.Hr()
+    ]),
+
+])
+
+inferenciaTarget4 = html.Div([
+    html.Div([
+        html.H1("Perfíl monetario de clientes")
+    ], style={
+        "background-image": "https://img.freepik.com/vector-premium/tienda-productos-organicos-supermercado_182089-263.jpg?w=2000"}),
+    html.Div([
+        html.Div([
+            dbc.Label("Ingresos", html_for="Income"),
+            dbc.Input(type="text", id="Income", placeholder="Ingrese la cantidad de ingresos")
+        ], style={"padding-top": "20px"})
+    ]),
+    html.Div([
+        html.Div([
+            dbc.Label("Personas jóvenes en el hogar", html_for="YoungHome"),
+            dbc.Input(type="text", id="YoungHome", placeholder="Ingrese la personas jóvenes en el hogar")
+        ], style={"padding-top": "20px"})
+    ]),
+    html.Div([
+        html.Div([
+            dbc.Label("Gastos totales", html_for="MntTotal"),
+            dbc.Input(type="text", id="MntTotal", placeholder="Ingrese la cantidad de gastos totales en las categorias de productos")
+        ], style={"padding-top": "20px"})
+    ]),
+    html.Div([
+            dbc.Button("Perfilar cliente", id="submitClientIncomePerfilation", n_clicks=0, color="secondary",
+                       className="me-1")
+        ], style={"padding-top": "20px"}),
+    html.Div([
+
+        ], id="div-response-client-income-perfilation", style={"padding-top": "20px"}),
+    html.Hr()
+])
+
 content = html.Div(id="page-content", style=CONTENT_STYLE)
 
 app.layout = html.Div([dcc.Location(id="url"), sidebar, content])
@@ -298,7 +515,7 @@ def analytics_campaign(pathname):
     if pathname == "/DATOS":
         return createTable(df)
     elif pathname == "/INFERENCIA":
-        return "inferencia campaña"
+        return inferenciaTarget3
     # If the user tries to reach a different page, return a 404 message
     return getDivError(pathname)
 
@@ -307,7 +524,7 @@ def analytics_expenses(pathname):
     if pathname == "/DATOS":
         return createTable(df)
     elif pathname == "/INFERENCIA":
-        return "inferencia gastos"
+        return inferenciaTarget4
     # If the user tries to reach a different page, return a 404 message
     return getDivError(pathname)
 
@@ -437,6 +654,90 @@ def inferencia_store(n_clicks, mntWinesStore, mntMeatProductsStore, incomeStore,
 
         return (f"El cliente que ingreso podria realizar {result} compras al mes")
 
+@app.callback(Output(component_id="div-response-campaign-aceptation", component_property="children"),
+              Input(component_id='submitCampaignAceptation', component_property='n_clicks'),
+              Input(component_id='Year_Birth', component_property='value'),
+              Input(component_id='Education', component_property='value'),
+              Input(component_id='Marital_Status', component_property='value'),
+              Input(component_id='Income', component_property='value'),
+              Input(component_id='Kidhome', component_property='value'),
+              Input(component_id='Teenhome', component_property='value'),
+              Input(component_id='Recency', component_property='value'),
+              Input(component_id='MntWines', component_property='value'),
+              Input(component_id='MntFruits', component_property='value'),
+              Input(component_id='MntMeatProducts', component_property='value'),
+              Input(component_id='MntFishProducts', component_property='value'),
+              Input(component_id='MntSweetProducts', component_property='value'),
+              Input(component_id='MntGoldProds', component_property='value'),
+              Input(component_id='MntDealsPurchases', component_property='value'),
+              Input(component_id='NumWebPurchases', component_property='value'),
+              Input(component_id='NumCatalogPurchases', component_property='value'),
+              Input(component_id='NumStorePurchases', component_property='value'),
+              Input(component_id='NumWebVisitsMonth', component_property='value'),
+              Input(component_id='AcceptedCmp3', component_property='value'),
+              Input(component_id='AcceptedCmp4', component_property='value'),
+              Input(component_id='AcceptedCmp5', component_property='value'),
+              Input(component_id='AcceptedCmp1', component_property='value'),
+              Input(component_id='AcceptedCmp2', component_property='value'),
+              Input(component_id='Complain', component_property='value'),
+              Input(component_id='Z_CostContact', component_property='value'),
+              Input(component_id='Z_Revenue', component_property='value'))
+def CampainAceptation(n_clicks, Year_Birth, Education, Marital_Status, Income, Kidhome, Teenhome, Recency, MntWines, MntFruits,
+                      MntMeatProducts, MntFishProducts, MntSweetProducts, MntGoldProds, MntDealsPurchases,
+                      NumWebPurchases, NumCatalogPurchases, NumStorePurchases, NumWebVisitsMonth, AcceptedCmp3,
+                      AcceptedCmp4, AcceptedCmp5, AcceptedCmp1, AcceptedCmp2, Complain, Z_CostContact, Z_Revenue):
+    if ("submitCampaignAceptation" == ctx.triggered_id):
+        campaing_aceptation_model = joblib.load("../model/Giovanni/ClientePropensoAceptarNuevaCampaña.joblib")
+        input = pd.DataFrame()
+        input["Year_Birth"] = [Year_Birth]
+        input["Education"] = [Education]
+        input["Marital_Status"] = [Marital_Status]
+        input["Income"] = [Income]
+        input["Kidhome"] = [Kidhome]
+        input["Teenhome"] = [Teenhome]
+        input["Recency"] = [Recency]
+        input["MntWines"] = [MntWines]
+        input["MntFruits"] = [MntFruits]
+        input["MntMeatProducts"] = [MntMeatProducts]
+        input["MntFishProducts"] = [MntFishProducts]
+        input["MntSweetProducts"] = [MntSweetProducts]
+        input["MntGoldProds"] = [MntGoldProds]
+        input["MntDealsPurchases"] = [MntDealsPurchases]
+        input["NumWebPurchases"] = [NumWebPurchases]
+        input["NumCatalogPurchases"] = [NumCatalogPurchases]
+        input["NumStorePurchases"] = [NumStorePurchases]
+        input["NumWebVisitsMonth"] = [NumWebVisitsMonth]
+        input["AcceptedCmp3"] = [AcceptedCmp3]
+        input["AcceptedCmp4"] = [AcceptedCmp4]
+        input["AcceptedCmp5"] = [AcceptedCmp5]
+        input["AcceptedCmp1"] = [AcceptedCmp1]
+        input["AcceptedCmp2"] = [AcceptedCmp2]
+        input["Complain"] = [Complain]
+        input["Z_CostContact"] = [Z_CostContact]
+        input["Z_Revenue"] = [Z_Revenue]
+
+        result = campaing_aceptation_model.predict(input)[0]
+        if (result):
+            result = "<b>Si</b>"
+        else:
+            result = "<b>No</b>"
+
+        return (f"El cliente que ingreso podria {result} aceptar una próxima campaña")
+
+@app.callback(Output(component_id="div-response-client-income-perfilation", component_property="children"),
+              Input(component_id='submitClientIncomePerfilation', component_property='n_clicks'),
+              Input(component_id='Income', component_property='value'),
+              Input(component_id='YoungHome', component_property='value'),
+              Input(component_id='MntTotal', component_property='value'))
+def clientIncomePerfilation(n_clicks, Income, YoungHome, MntTotal):
+    if ("submitClientIncomePerfilation" == ctx.triggered_id):
+        #clientPerfilationModel = joblib.load("../")
+        input = pd.DataFrame()
+        input["Income"] = [Income]
+        input["YoungHome"] = [YoungHome]
+        input["MntTotal"] = [MntTotal]
+        #result = campaing_aceptation_model.predict(input)[0]
+        return ("Sisa mano")
 
 if __name__ == '__main__':
     app.run_server(debug=True)

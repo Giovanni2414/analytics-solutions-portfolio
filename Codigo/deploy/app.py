@@ -452,6 +452,7 @@ numCatalogPurchasesProfile, numStorePurchasesProfile, numWebVisitsMonthProfile, 
         input = pd.DataFrame()
 
         input["Education"] = [educationProfile]
+        #input["Education"] = input["Education"].astype('int64')
         input["Marital_Status"] = [maritalStatusProfile]
         input["Income"] = [incomeProfile]
         input["Kidhome"] = [kidhomeProfile]

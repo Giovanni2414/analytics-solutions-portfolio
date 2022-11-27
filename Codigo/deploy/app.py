@@ -67,178 +67,416 @@ sidebar = html.Div(
 )
 
 inferenciaTarget1 = html.Div([
+    html.Div([
+        html.H1("COMPRAS POR CATALOGO")
+    ], style={"background-image": "https://img.freepik.com/vector-premium/tienda-productos-organicos-supermercado_182089-263.jpg?w=2000"}),
+    html.Div([
         html.Div([
-            html.H1("COMPRAS POR CATALOGO")
-        ],style={"background-image":"https://img.freepik.com/vector-premium/tienda-productos-organicos-supermercado_182089-263.jpg?w=2000"}),
+            dbc.Label("Gastos en vinos", html_for="mntWinesCatalog"),
+            dbc.Input(type="text", id="mntWinesCatalog",
+                      placeholder="Ingrese el monto del gasto en vinos")
+        ], style={"padding-top": "20px"}),
         html.Div([
-            html.Div([
-                dbc.Label("Gastos en vinos", html_for="mntWinesCatalog"),
-                dbc.Input(type="text", id="mntWinesCatalog", placeholder="Ingrese el monto del gasto en vinos")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Gasto en carnes", html_for="mntMeatProductsCatalog"),
-                dbc.Input(type="text", id="mntMeatProductsCatalog", placeholder="Ingrese el monto del gasto en carnes")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Ingresos", html_for="incomeCatalog"),
-                dbc.Input(type="text", id="incomeCatalog", placeholder="Ingrese los ingresos mensuales")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Compras por tienda fisica", html_for="numStorePurchasesCatalog"),
-                dbc.Input(type="text", id="numStorePurchasesCatalog", placeholder="Ingrese la cantidad de compras realizadas por tienda fisica")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Gasto en productos premium", html_for="mntGoldProdsCatalog"),
-                dbc.Input(type="text", id="mntGoldProdsCatalog", placeholder="Ingrese el monto del gasto en productos premium")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Gasto en frutas", html_for="mntFruitsCatalog"),
-                dbc.Input(type="text", id="mntFruitsCatalog", placeholder="Ingrese el monto del gasto en frutas")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Gasto en pescado", html_for="mntFishProductsCatalog"),
-                dbc.Input(type="text", id="mntFishProductsCatalog", placeholder="Ingrese el monto del gasto en productos de pescado")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Gasto en dulces", html_for="mntSweetProductsCatalog"),
-                dbc.Input(type="text", id="mntSweetProductsCatalog", placeholder="Ingrese el monto del gasto en productos dulces")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Compras por pagina web", html_for="numWebPurchasesCatalog"),
-                dbc.Input(type="text", id="numWebPurchasesCatalog", placeholder="Ingrese la cantidad de compras realizadas por pagina web")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Niños en casa", html_for="kidhomeCatalog"),
-                dbc.Input(type="text", id="kidhomeCatalog", placeholder="Ingrese la cantidad de niños del hogar")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Visitas web", html_for="numWebVisitsMonthCatalog"),
-                dbc.Input(type="text", id="numWebVisitsMonthCatalog", placeholder="Ingrese la cantidad de visitas web por mes")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Button("Predecir compras por catalogo", id="submitCatalog", n_clicks=0, color="secondary", className="me-1")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-
-            ], id="div-response-catalog", style={"padding-top": "20px"}),
-            html.Hr()
-        ]),
-
-
+            dbc.Label("Gasto en carnes",
+                      html_for="mntMeatProductsCatalog"),
+            dbc.Input(type="text", id="mntMeatProductsCatalog",
+                      placeholder="Ingrese el monto del gasto en carnes")
+        ], style={"padding-top": "20px"}),
         html.Div([
-            html.H1("COMPRAS POR PAGINA WEB")
-        ],),
+            dbc.Label("Ingresos", html_for="incomeCatalog"),
+            dbc.Input(type="text", id="incomeCatalog",
+                      placeholder="Ingrese los ingresos mensuales")
+        ], style={"padding-top": "20px"}),
         html.Div([
-            html.Div([
-                dbc.Label("Compras por catalogo", html_for="numCatalogPurchasesWeb"),
-                dbc.Input(type="text", id="numCatalogPurchasesWeb", placeholder="Ingrese la cantidad de compras realizadas por catalogo")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Gastos en vinos", html_for="mntWinesWeb"),
-                dbc.Input(type="text", id="mntWinesWeb", placeholder="Ingrese el monto del gasto en vinos")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Gasto en carnes", html_for="mntMeatProductsWeb"),
-                dbc.Input(type="text", id="mntMeatProductsWeb", placeholder="Ingrese el monto del gasto en carnes")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Ingresos", html_for="incomeWeb"),
-                dbc.Input(type="text", id="incomeWeb", placeholder="Ingrese los ingresos mensuales")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Compras por tienda fisica", html_for="numStorePurchasesWeb"),
-                dbc.Input(type="text", id="numStorePurchasesWeb", placeholder="Ingrese la cantidad de compras realizadas por tienda fisica")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Gasto en pescado", html_for="mntFishProductsWeb"),
-                dbc.Input(type="text", id="mntFishProductsWeb", placeholder="Ingrese el monto del gasto en productos de pescado")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Gasto en productos premium", html_for="mntGoldProdsWeb"),
-                dbc.Input(type="text", id="mntGoldProdsWeb", placeholder="Ingrese el monto del gasto en productos premium")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Gasto en frutas", html_for="mntFruitsWeb"),
-                dbc.Input(type="text", id="mntFruitsWeb", placeholder="Ingrese el monto del gasto en frutas")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Gasto en dulces", html_for="mntSweetProductsWeb"),
-                dbc.Input(type="text", id="mntSweetProductsWeb", placeholder="Ingrese el monto del gasto en productos dulces")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Niños en casa", html_for="kidhomeWeb"),
-                dbc.Input(type="text", id="kidhomeWeb", placeholder="Ingrese la cantidad de niños del hogar")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Visitas web", html_for="numWebVisitsMonthWeb"),
-                dbc.Input(type="text", id="numWebVisitsMonthWeb", placeholder="Ingrese la cantidad de visitas web por mes")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Button("Predecir compras por pagina web", id="submitWeb", n_clicks=0, color="secondary", className="me-1")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-
-            ], id="div-response-web", style={"padding-top": "20px"}),
-            html.Hr()
-        ]),
-
-
+            dbc.Label("Compras por tienda fisica",
+                      html_for="numStorePurchasesCatalog"),
+            dbc.Input(type="text", id="numStorePurchasesCatalog",
+                      placeholder="Ingrese la cantidad de compras realizadas por tienda fisica")
+        ], style={"padding-top": "20px"}),
         html.Div([
-            html.H1("COMPRAS POR TIENDA FISICA")
-        ],),
+            dbc.Label("Gasto en productos premium",
+                      html_for="mntGoldProdsCatalog"),
+            dbc.Input(type="text", id="mntGoldProdsCatalog",
+                      placeholder="Ingrese el monto del gasto en productos premium")
+        ], style={"padding-top": "20px"}),
         html.Div([
-            html.Div([
-                dbc.Label("Compras por catalogo", html_for="numCatalogPurchasesStore"),
-                dbc.Input(type="text", id="numCatalogPurchasesStore", placeholder="Ingrese la cantidad de compras realizadas por catalogo")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Gastos en vinos", html_for="mntWinesStore"),
-                dbc.Input(type="text", id="mntWinesStore", placeholder="Ingrese el monto del gasto en vinos")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Gasto en carnes", html_for="mntMeatProductsStore"),
-                dbc.Input(type="text", id="mntMeatProductsStore", placeholder="Ingrese el monto del gasto en carnes")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Ingresos", html_for="incomeStore"),
-                dbc.Input(type="text", id="incomeStore", placeholder="Ingrese los ingresos mensuales")
-            ], style={"padding-top": "20px"}),
-             html.Div([
-                dbc.Label("Gasto en pescado", html_for="mntFishProductsStore"),
-                dbc.Input(type="text", id="mntFishProductsStore", placeholder="Ingrese el monto del gasto en productos de pescado")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Gasto en frutas", html_for="mntFruitsStore"),
-                dbc.Input(type="text", id="mntFruitsStore", placeholder="Ingrese el monto del gasto en frutas")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Gasto en productos premium", html_for="mntGoldProdsStore"),
-                dbc.Input(type="text", id="mntGoldProdsStore", placeholder="Ingrese el monto del gasto en productos premium")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Gasto en dulces", html_for="mntSweetProductsStore"),
-                dbc.Input(type="text", id="mntSweetProductsStore", placeholder="Ingrese el monto del gasto en productos dulces")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Compras por pagina web", html_for="numWebPurchasesStore"),
-                dbc.Input(type="text", id="numWebPurchasesStore", placeholder="Ingrese la cantidad de compras realizadas por pagina web")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Niños en casa", html_for="kidhomeStore"),
-                dbc.Input(type="text", id="kidhomeStore", placeholder="Ingrese la cantidad de niños del hogar")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Label("Visitas web", html_for="numWebVisitsMonthStore"),
-                dbc.Input(type="text", id="numWebVisitsMonthStore", placeholder="Ingrese la cantidad de visitas web por mes")
-            ], style={"padding-top": "20px"}),
-            html.Div([
-                dbc.Button("Predecir compras por tienda fisica", id="submitStore", n_clicks=0, color="secondary", className="me-1")
-            ], style={"padding-top": "20px"}),
-            html.Div([
+            dbc.Label("Gasto en frutas", html_for="mntFruitsCatalog"),
+            dbc.Input(type="text", id="mntFruitsCatalog",
+                      placeholder="Ingrese el monto del gasto en frutas")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en pescado",
+                      html_for="mntFishProductsCatalog"),
+            dbc.Input(type="text", id="mntFishProductsCatalog",
+                      placeholder="Ingrese el monto del gasto en productos de pescado")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en dulces",
+                      html_for="mntSweetProductsCatalog"),
+            dbc.Input(type="text", id="mntSweetProductsCatalog",
+                      placeholder="Ingrese el monto del gasto en productos dulces")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Compras por pagina web",
+                      html_for="numWebPurchasesCatalog"),
+            dbc.Input(type="text", id="numWebPurchasesCatalog",
+                      placeholder="Ingrese la cantidad de compras realizadas por pagina web")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Niños en casa", html_for="kidhomeCatalog"),
+            dbc.Input(type="text", id="kidhomeCatalog",
+                      placeholder="Ingrese la cantidad de niños del hogar")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Visitas web", html_for="numWebVisitsMonthCatalog"),
+            dbc.Input(type="text", id="numWebVisitsMonthCatalog",
+                      placeholder="Ingrese la cantidad de visitas web por mes")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Button("Predecir compras por catalogo", id="submitCatalog",
+                       n_clicks=0, color="secondary", className="me-1")
+        ], style={"padding-top": "20px"}),
+        html.Div([
 
-            ], id="div-response-store", style={"padding-top": "20px"}),
-        ])
+        ], id="div-response-catalog", style={"padding-top": "20px"}),
+        html.Hr()
+    ]),
+
+
+    html.Div([
+        html.H1("COMPRAS POR PAGINA WEB")
+    ],),
+    html.Div([
+        html.Div([
+            dbc.Label("Compras por catalogo",
+                      html_for="numCatalogPurchasesWeb"),
+            dbc.Input(type="text", id="numCatalogPurchasesWeb",
+                      placeholder="Ingrese la cantidad de compras realizadas por catalogo")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gastos en vinos", html_for="mntWinesWeb"),
+            dbc.Input(type="text", id="mntWinesWeb",
+                      placeholder="Ingrese el monto del gasto en vinos")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en carnes", html_for="mntMeatProductsWeb"),
+            dbc.Input(type="text", id="mntMeatProductsWeb",
+                      placeholder="Ingrese el monto del gasto en carnes")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Ingresos", html_for="incomeWeb"),
+            dbc.Input(type="text", id="incomeWeb",
+                      placeholder="Ingrese los ingresos mensuales")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Compras por tienda fisica",
+                      html_for="numStorePurchasesWeb"),
+            dbc.Input(type="text", id="numStorePurchasesWeb",
+                      placeholder="Ingrese la cantidad de compras realizadas por tienda fisica")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en pescado", html_for="mntFishProductsWeb"),
+            dbc.Input(type="text", id="mntFishProductsWeb",
+                      placeholder="Ingrese el monto del gasto en productos de pescado")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en productos premium",
+                      html_for="mntGoldProdsWeb"),
+            dbc.Input(type="text", id="mntGoldProdsWeb",
+                      placeholder="Ingrese el monto del gasto en productos premium")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en frutas", html_for="mntFruitsWeb"),
+            dbc.Input(type="text", id="mntFruitsWeb",
+                      placeholder="Ingrese el monto del gasto en frutas")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en dulces", html_for="mntSweetProductsWeb"),
+            dbc.Input(type="text", id="mntSweetProductsWeb",
+                      placeholder="Ingrese el monto del gasto en productos dulces")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Niños en casa", html_for="kidhomeWeb"),
+            dbc.Input(type="text", id="kidhomeWeb",
+                      placeholder="Ingrese la cantidad de niños del hogar")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Visitas web", html_for="numWebVisitsMonthWeb"),
+            dbc.Input(type="text", id="numWebVisitsMonthWeb",
+                      placeholder="Ingrese la cantidad de visitas web por mes")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Button("Predecir compras por pagina web", id="submitWeb",
+                       n_clicks=0, color="secondary", className="me-1")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+
+        ], id="div-response-web", style={"padding-top": "20px"}),
+        html.Hr()
+    ]),
+
+
+    html.Div([
+        html.H1("COMPRAS POR TIENDA FISICA")
+    ],),
+    html.Div([
+        html.Div([
+            dbc.Label("Compras por catalogo",
+                      html_for="numCatalogPurchasesStore"),
+            dbc.Input(type="text", id="numCatalogPurchasesStore",
+                      placeholder="Ingrese la cantidad de compras realizadas por catalogo")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gastos en vinos", html_for="mntWinesStore"),
+            dbc.Input(type="text", id="mntWinesStore",
+                      placeholder="Ingrese el monto del gasto en vinos")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en carnes", html_for="mntMeatProductsStore"),
+            dbc.Input(type="text", id="mntMeatProductsStore",
+                      placeholder="Ingrese el monto del gasto en carnes")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Ingresos", html_for="incomeStore"),
+            dbc.Input(type="text", id="incomeStore",
+                      placeholder="Ingrese los ingresos mensuales")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en pescado", html_for="mntFishProductsStore"),
+            dbc.Input(type="text", id="mntFishProductsStore",
+                      placeholder="Ingrese el monto del gasto en productos de pescado")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en frutas", html_for="mntFruitsStore"),
+            dbc.Input(type="text", id="mntFruitsStore",
+                      placeholder="Ingrese el monto del gasto en frutas")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en productos premium",
+                      html_for="mntGoldProdsStore"),
+            dbc.Input(type="text", id="mntGoldProdsStore",
+                      placeholder="Ingrese el monto del gasto en productos premium")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en dulces", html_for="mntSweetProductsStore"),
+            dbc.Input(type="text", id="mntSweetProductsStore",
+                      placeholder="Ingrese el monto del gasto en productos dulces")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Compras por pagina web",
+                      html_for="numWebPurchasesStore"),
+            dbc.Input(type="text", id="numWebPurchasesStore",
+                      placeholder="Ingrese la cantidad de compras realizadas por pagina web")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Niños en casa", html_for="kidhomeStore"),
+            dbc.Input(type="text", id="kidhomeStore",
+                      placeholder="Ingrese la cantidad de niños del hogar")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Visitas web", html_for="numWebVisitsMonthStore"),
+            dbc.Input(type="text", id="numWebVisitsMonthStore",
+                      placeholder="Ingrese la cantidad de visitas web por mes")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Button("Predecir compras por tienda fisica", id="submitStore",
+                       n_clicks=0, color="secondary", className="me-1")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+
+        ], id="div-response-store", style={"padding-top": "20px"}),
+    ])
 ])
+
+
+inferenciaTarget2 = html.Div([
+    html.Div([
+        html.H1("PERFILES DE COMPRADORES")
+    ]),
+    html.Div([
+        html.Div([
+             dbc.Label("Educación", html_for="educationProfile"),
+             dbc.Input(type="text", id="educationProfile",
+                       placeholder="Ingrese el numero correspondiente a la educación")
+             ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Estado marital", html_for="maritalStatusProfile"),
+            dbc.Input(type="text", id="maritalStatusProfile",
+                      placeholder="Ingrese el numero correspondiente al estado marital")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Ingresos", html_for="incomeProfile"),
+            dbc.Input(type="text", id="incomeProfile",
+                      placeholder="Ingrese los ingresos mensuales")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Niños en casa", html_for="kidhomeProfile"),
+            dbc.Input(type="text", id="kidhomeProfile",
+                      placeholder="Ingrese la cantidad de niños del hogar")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Adolecentes en casa", html_for="teenhomeProfile"),
+            dbc.Input(type="text", id="teenhomeProfile",
+                      placeholder="Ingrese la cantidad de adolecentes del hogar")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Frescura", html_for="recencyProfile"),
+            dbc.Input(type="text", id="recencyProfile",
+                      placeholder="Ingrese la cantidad de frescura")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gastos en vinos", html_for="mntWinesProfile"),
+            dbc.Input(type="text", id="mntWinesProfile",
+                      placeholder="Ingrese el monto del gasto en vinos")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en frutas", html_for="mntFruitsProfile"),
+            dbc.Input(type="text", id="mntFruitsProfile",
+                      placeholder="Ingrese el monto del gasto en frutas")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en carnes",
+                      html_for="mntMeatProductsProfile"),
+            dbc.Input(type="text", id="mntMeatProductsProfile",
+                      placeholder="Ingrese el monto del gasto en carnes")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en pescado",
+                      html_for="mntFishProductsProfile"),
+            dbc.Input(type="text", id="mntFishProductsProfile",
+                      placeholder="Ingrese el monto del gasto en productos de pescado")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en dulces",
+                      html_for="mntSweetProductsProfile"),
+            dbc.Input(type="text", id="mntSweetProductsProfile",
+                      placeholder="Ingrese el monto del gasto en productos dulces")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Gasto en productos premium",
+                      html_for="mntGoldProdsProfile"),
+            dbc.Input(type="text", id="mntGoldProdsProfile",
+                      placeholder="Ingrese el monto del gasto en productos premium")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Compras en oferta",
+                      html_for="dealsPurchasesProfile"),
+            dbc.Input(type="text", id="dealsPurchasesProfile",
+                      placeholder="Ingrese la cantidad de compras realizadas en oferta")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Compras por pagina web",
+                      html_for="numWebPurchasesProfile"),
+            dbc.Input(type="text", id="numWebPurchasesProfile",
+                      placeholder="Ingrese la cantidad de compras realizadas por pagina web")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Compras por catalogo",
+                      html_for="numCatalogPurchasesProfile"),
+            dbc.Input(type="text", id="numCatalogPurchasesProfile",
+                      placeholder="Ingrese la cantidad de compras realizadas por catalogo")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Compras por tienda fisica",
+                      html_for="numStorePurchasesProfile"),
+            dbc.Input(type="text", id="numStorePurchasesProfile",
+                      placeholder="Ingrese la cantidad de compras realizadas por tienda fisica")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Visitas web", html_for="numWebVisitsMonthProfile"),
+            dbc.Input(type="text", id="numWebVisitsMonthProfile",
+                      placeholder="Ingrese la cantidad de visitas web por mes")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Cantidad de reclamos por mes",
+                      html_for="complainProfile"),
+            dbc.Input(type="text", id="complainProfile",
+                      placeholder="Ingrese la cantidad de reclamos por mes")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Ingrese la respuesta", html_for="responseProfile"),
+            dbc.Input(type="text", id="responseProfile",
+                      placeholder="Ingrese la respuesta")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Ingrese la edad", html_for="ageProfile"),
+            dbc.Input(type="text", id="ageProfile",
+                      placeholder="Ingrese la edad")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Label("Ingrese el día de inscripción",
+                      html_for="enrolmentDaysProfile"),
+            dbc.Input(type="text", id="enrolmentDaysProfile",
+                      placeholder="Ingrese el día de inscripción")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+            dbc.Button("Determinar perfil del cliente", id="submitProfile",
+                       n_clicks=0, color="secondary", className="me-1")
+        ], style={"padding-top": "20px"}),
+        html.Div([
+
+        ], id="div-response-profile", style={"padding-top": "20px"}),
+        html.Hr()
+    ])
+])
+
+@app.callback(Output(component_id="div-response-profile", component_property="children"),
+              Input(component_id='submitProfile',component_property='n_clicks'),
+              Input(component_id="educationProfile", component_property="value"),
+              Input(component_id="maritalStatusProfile", component_property="value"),
+              Input(component_id="incomeProfile", component_property="value"),
+              Input(component_id="kidhomeProfile", component_property="value"),
+              Input(component_id="teenhomeProfile", component_property="value"),
+              Input(component_id="recencyProfile", component_property="value"),
+              Input(component_id="mntWinesProfile", component_property="value"),
+              Input(component_id="mntFruitsProfile", component_property="value"),
+              Input(component_id="mntMeatProductsProfile",component_property="value"),
+              Input(component_id="mntFishProductsProfile",component_property="value"),
+              Input(component_id="mntSweetProductsProfile",component_property="value"),
+              Input(component_id="mntGoldProdsProfile",component_property="value"),
+              Input(component_id="dealsPurchasesProfile",component_property="value"),
+              Input(component_id="numWebPurchasesProfile", component_property="value"),
+              Input(component_id="numCatalogPurchasesProfile",component_property="value"),
+              Input(component_id="numStorePurchasesProfile",component_property="value"),
+              Input(component_id="numWebVisitsMonthProfile",component_property="value"),
+              Input(component_id="complainProfile",component_property="value"),
+              Input(component_id="responseProfile",component_property="value"),
+              Input(component_id="ageProfile",component_property="value"),
+              Input(component_id="enrolmentDaysProfile",component_property="value"))
+def inferenciaProfile(n_clicks, educationProfile, maritalStatusProfile, incomeProfile, kidhomeProfile, teenhomeProfile, recencyProfile, mntWinesProfile, 
+mntFruitsProfile, mntMeatProductsProfile, mntFishProductsProfile, mntSweetProductsProfile, mntGoldProdsProfile, dealsPurchasesProfile, numWebPurchasesProfile, 
+numCatalogPurchasesProfile, numStorePurchasesProfile, numWebVisitsMonthProfile, complainProfile, responseProfile, ageProfile, enrolmentDaysProfile):
+    if ("submitProfile" == ctx.triggered_id):
+        profile_model = joblib.load("../persistencia/customer_profile_model.joblib")
+
+        input = pd.DataFrame()
+
+        input["Education"] = [educationProfile]
+        input["Marital_Status"] = [maritalStatusProfile]
+        input["Income"] = [incomeProfile]
+        input["Kidhome"] = [kidhomeProfile]
+        input["Teenhome"] = [teenhomeProfile]
+        input["Recency"] = [recencyProfile]
+        input["MntWines"] = [mntWinesProfile]
+        input["MntFruits"] = [mntFruitsProfile]
+        input["MntMeatProducts"] = [mntMeatProductsProfile]
+        input["MntFishProducts"] = [mntFishProductsProfile]
+        input["MntSweetProducts"] = [mntSweetProductsProfile]
+        input["MntGoldProds"] = [mntGoldProdsProfile]
+        input["NumDealsPurchases"] = [dealsPurchasesProfile]
+        input["NumWebPurchases"] = [numWebPurchasesProfile]
+        input["NumCatalogPurchases"] = [numCatalogPurchasesProfile]
+        input["NumStorePurchases"] = [numStorePurchasesProfile]
+        input["NumWebVisitsMonth"] = [numWebVisitsMonthProfile]
+        input["Complain"] = [complainProfile]
+        input["Response"] = [responseProfile]
+        input["Age"] = [ageProfile]
+        input["Enrolment_Days"] = [enrolmentDaysProfile]
+
+        result = profile_model.predict(input)[0]
+
+        return (f"El cliente que ingreso pertenece al Perfil {result}")
+
 
 inferenciaTarget3 = html.Div([
     html.Div([
@@ -248,7 +486,8 @@ inferenciaTarget3 = html.Div([
     html.Div([
         html.Div([
             dbc.Label("Año de nacimiento", html_for="Year_Birth"),
-            dbc.Input(type="text", id="Year_Birth", placeholder="Ingrese el año de nacimiento")
+            dbc.Input(type="text", id="Year_Birth",
+                      placeholder="Ingrese el año de nacimiento")
         ], style={"padding-top": "20px"}),
         html.Div([
             dbc.Label("Nivel de educación", html_for="Education"),
@@ -281,31 +520,38 @@ inferenciaTarget3 = html.Div([
         ], style={"padding-top": "20px"}),
         html.Div([
             dbc.Label("Ingresos", html_for="Income"),
-            dbc.Input(type="text", id="Income", placeholder="Ingrese los ingresos mensuales")
+            dbc.Input(type="text", id="Income",
+                      placeholder="Ingrese los ingresos mensuales")
         ], style={"padding-top": "20px"}),
         html.Div([
             dbc.Label("Niños en casa", html_for="Kidhome"),
-            dbc.Input(type="text", id="Kidhome", placeholder="Ingrese la cantidad de niños del hogar")
+            dbc.Input(type="text", id="Kidhome",
+                      placeholder="Ingrese la cantidad de niños del hogar")
         ], style={"padding-top": "20px"}),
         html.Div([
             dbc.Label("Adolecentes en casa", html_for="Teenhome"),
-            dbc.Input(type="text", id="Teenhome", placeholder="Ingrese la cantidad de adolecentes del hogar")
+            dbc.Input(type="text", id="Teenhome",
+                      placeholder="Ingrese la cantidad de adolecentes del hogar")
         ], style={"padding-top": "20px"}),
         html.Div([
             dbc.Label("Dias desde la última visita", html_for="Recency"),
-            dbc.Input(type="text", id="Recency", placeholder="Ingrese la cantidad de días desde su últimavisita")
+            dbc.Input(type="text", id="Recency",
+                      placeholder="Ingrese la cantidad de días desde su últimavisita")
         ], style={"padding-top": "20px"}),
         html.Div([
             dbc.Label("Gastos en vinos", html_for="MntWines"),
-            dbc.Input(type="text", id="MntWines", placeholder="Ingrese el monto del gasto en vinos")
+            dbc.Input(type="text", id="MntWines",
+                      placeholder="Ingrese el monto del gasto en vinos")
         ], style={"padding-top": "20px"}),
         html.Div([
             dbc.Label("Gasto en frutas", html_for="MntFruits"),
-            dbc.Input(type="text", id="MntFruits", placeholder="Ingrese el monto del gasto en frutas")
+            dbc.Input(type="text", id="MntFruits",
+                      placeholder="Ingrese el monto del gasto en frutas")
         ], style={"padding-top": "20px"}),
         html.Div([
             dbc.Label("Gasto en carnes", html_for="MntMeatProducts"),
-            dbc.Input(type="text", id="MntMeatProducts", placeholder="Ingrese el monto del gasto en carnes")
+            dbc.Input(type="text", id="MntMeatProducts",
+                      placeholder="Ingrese el monto del gasto en carnes")
         ], style={"padding-top": "20px"}),
         html.Div([
             dbc.Label("Gasto en pescado", html_for="MntFishProducts"),
@@ -323,7 +569,8 @@ inferenciaTarget3 = html.Div([
                       placeholder="Ingrese el monto del gasto en productos premium")
         ], style={"padding-top": "20px"}),
         html.Div([
-            dbc.Label("Gasto en productos en oferta", html_for="MntDealsPurchases"),
+            dbc.Label("Gasto en productos en oferta",
+                      html_for="MntDealsPurchases"),
             dbc.Input(type="text", id="MntDealsPurchases",
                       placeholder="Ingrese el monto del gasto en productos en oferta")
         ], style={"padding-top": "20px"}),
@@ -338,7 +585,8 @@ inferenciaTarget3 = html.Div([
                       placeholder="Ingrese la cantidad de compras realizadas por catálogo")
         ], style={"padding-top": "20px"}),
         html.Div([
-            dbc.Label("Compras por tienda fisica", html_for="NumStorePurchases"),
+            dbc.Label("Compras por tienda fisica",
+                      html_for="NumStorePurchases"),
             dbc.Input(type="text", id="NumStorePurchases",
                       placeholder="Ingrese la cantidad de compras realizadas por tienda fisica")
         ], style={"padding-top": "20px"}),
@@ -348,7 +596,8 @@ inferenciaTarget3 = html.Div([
                       placeholder="Ingrese la cantidad de visitas web por mes")
         ], style={"padding-top": "20px"}),
         html.Div([
-            dbc.Label("Campaña número 3 aceptada previamente?", html_for="AcceptedCmp3"),
+            dbc.Label("Campaña número 3 aceptada previamente?",
+                      html_for="AcceptedCmp3"),
             dbc.Select(
                 id="AcceptedCmp3",
                 options=[
@@ -358,7 +607,8 @@ inferenciaTarget3 = html.Div([
             )
         ], style={"padding-top": "20px"}),
         html.Div([
-            dbc.Label("Campaña número 4 aceptada previamente?", html_for="AcceptedCmp4"),
+            dbc.Label("Campaña número 4 aceptada previamente?",
+                      html_for="AcceptedCmp4"),
             dbc.Select(
                 id="AcceptedCmp4",
                 options=[
@@ -368,7 +618,8 @@ inferenciaTarget3 = html.Div([
             )
         ], style={"padding-top": "20px"}),
         html.Div([
-            dbc.Label("Campaña número 5 aceptada previamente?", html_for="AcceptedCmp5"),
+            dbc.Label("Campaña número 5 aceptada previamente?",
+                      html_for="AcceptedCmp5"),
             dbc.Select(
                 id="AcceptedCmp5",
                 options=[
@@ -378,7 +629,8 @@ inferenciaTarget3 = html.Div([
             )
         ], style={"padding-top": "20px"}),
         html.Div([
-            dbc.Label("Campaña número 1 aceptada previamente?", html_for="AcceptedCmp1"),
+            dbc.Label("Campaña número 1 aceptada previamente?",
+                      html_for="AcceptedCmp1"),
             dbc.Select(
                 id="AcceptedCmp1",
                 options=[
@@ -388,7 +640,8 @@ inferenciaTarget3 = html.Div([
             )
         ], style={"padding-top": "20px"}),
         html.Div([
-            dbc.Label("Campaña número 2 aceptada previamente?", html_for="AcceptedCmp2"),
+            dbc.Label("Campaña número 2 aceptada previamente?",
+                      html_for="AcceptedCmp2"),
             dbc.Select(
                 id="AcceptedCmp2",
                 options=[
@@ -432,28 +685,31 @@ inferenciaTarget4 = html.Div([
     html.Div([
         html.Div([
             dbc.Label("Ingresos", html_for="Income"),
-            dbc.Input(type="text", id="Income", placeholder="Ingrese la cantidad de ingresos")
+            dbc.Input(type="text", id="Income",
+                      placeholder="Ingrese la cantidad de ingresos")
         ], style={"padding-top": "20px"})
     ]),
     html.Div([
         html.Div([
             dbc.Label("Personas jóvenes en el hogar", html_for="YoungHome"),
-            dbc.Input(type="text", id="YoungHome", placeholder="Ingrese la personas jóvenes en el hogar")
+            dbc.Input(type="text", id="YoungHome",
+                      placeholder="Ingrese la personas jóvenes en el hogar")
         ], style={"padding-top": "20px"})
     ]),
     html.Div([
         html.Div([
             dbc.Label("Gastos totales", html_for="MntTotal"),
-            dbc.Input(type="text", id="MntTotal", placeholder="Ingrese la cantidad de gastos totales en las categorias de productos")
+            dbc.Input(type="text", id="MntTotal",
+                      placeholder="Ingrese la cantidad de gastos totales en las categorias de productos")
         ], style={"padding-top": "20px"})
     ]),
     html.Div([
-            dbc.Button("Perfilar cliente", id="submitClientIncomePerfilation", n_clicks=0, color="secondary",
-                       className="me-1")
-        ], style={"padding-top": "20px"}),
+        dbc.Button("Perfilar cliente", id="submitClientIncomePerfilation", n_clicks=0, color="secondary",
+                   className="me-1")
+    ], style={"padding-top": "20px"}),
     html.Div([
 
-        ], id="div-response-client-income-perfilation", style={"padding-top": "20px"}),
+    ], id="div-response-client-income-perfilation", style={"padding-top": "20px"}),
     html.Hr()
 ])
 
@@ -464,7 +720,8 @@ app.layout = html.Div([dcc.Location(id="url"), sidebar, content])
 
 def createTable(df):
     table = html.Div(
-        dash_table.DataTable(df.head(10).to_dict('records'), [{"name": i, "id": i} for i in df.columns])
+        dash_table.DataTable(df.head(10).to_dict('records'), [
+                             {"name": i, "id": i} for i in df.columns])
     )
     return table
 
@@ -506,7 +763,7 @@ def analytics_profiles(pathname):
     if pathname == "/DATOS":
         return createTable(df)
     elif pathname == "/INFERENCIA":
-        return "inferencia perfiles"
+        return inferenciaTarget2
     # If the user tries to reach a different page, return a 404 message
     return getDivError(pathname)
 
@@ -541,21 +798,30 @@ def getDivError(pathname):
 
 
 @app.callback(Output(component_id="div-response-catalog", component_property="children"),
-              Input(component_id='submitCatalog', component_property='n_clicks'),
-              Input(component_id="mntWinesCatalog", component_property="value"),
-              Input(component_id="mntMeatProductsCatalog", component_property="value"),
+              Input(component_id='submitCatalog',
+                    component_property='n_clicks'),
+              Input(component_id="mntWinesCatalog",
+                    component_property="value"),
+              Input(component_id="mntMeatProductsCatalog",
+                    component_property="value"),
               Input(component_id="incomeCatalog", component_property="value"),
-              Input(component_id="numStorePurchasesCatalog", component_property="value"),
-              Input(component_id="mntGoldProdsCatalog", component_property="value"),
-              Input(component_id="mntFruitsCatalog", component_property="value"),
-              Input(component_id="mntFishProductsCatalog", component_property="value"),
-              Input(component_id="mntSweetProductsCatalog", component_property="value"),
-              Input(component_id="numWebPurchasesCatalog", component_property="value"),
+              Input(component_id="numStorePurchasesCatalog",
+                    component_property="value"),
+              Input(component_id="mntGoldProdsCatalog",
+                    component_property="value"),
+              Input(component_id="mntFruitsCatalog",
+                    component_property="value"),
+              Input(component_id="mntFishProductsCatalog",
+                    component_property="value"),
+              Input(component_id="mntSweetProductsCatalog",
+                    component_property="value"),
+              Input(component_id="numWebPurchasesCatalog",
+                    component_property="value"),
               Input(component_id="kidhomeCatalog", component_property="value"),
-              Input(component_id="numWebVisitsMonthCatalog", component_property="value"),
+              Input(component_id="numWebVisitsMonthCatalog",
+                    component_property="value"),
               )
-def inferencia_catalog(n_clicks, mntWinesCatalog, mntMeatProductsCatalog, incomeCatalog, numStorePurchasesCatalog, mntGoldProdsCatalog, mntFruitsCatalog
-, mntFishProductsCatalog, mntSweetProductsCatalog, numWebPurchasesCatalog, kidhomeCatalog, numWebVisitsMonthCatalog):
+def inferencia_catalog(n_clicks, mntWinesCatalog, mntMeatProductsCatalog, incomeCatalog, numStorePurchasesCatalog, mntGoldProdsCatalog, mntFruitsCatalog, mntFishProductsCatalog, mntSweetProductsCatalog, numWebPurchasesCatalog, kidhomeCatalog, numWebVisitsMonthCatalog):
     if ("submitCatalog" == ctx.triggered_id):
         catalog_model = joblib.load("../persistencia/catalog_model.joblib")
 
@@ -577,24 +843,29 @@ def inferencia_catalog(n_clicks, mntWinesCatalog, mntMeatProductsCatalog, income
 
         return (f"El cliente que ingreso podria realizar {result} compras al mes")
 
-    
 
 @app.callback(Output(component_id="div-response-web", component_property="children"),
               Input(component_id='submitWeb', component_property='n_clicks'),
               Input(component_id="mntWinesWeb", component_property="value"),
-              Input(component_id="mntMeatProductsWeb", component_property="value"),
+              Input(component_id="mntMeatProductsWeb",
+                    component_property="value"),
               Input(component_id="incomeWeb", component_property="value"),
-              Input(component_id="numStorePurchasesWeb", component_property="value"),
-              Input(component_id="mntGoldProdsWeb", component_property="value"),
+              Input(component_id="numStorePurchasesWeb",
+                    component_property="value"),
+              Input(component_id="mntGoldProdsWeb",
+                    component_property="value"),
               Input(component_id="mntFruitsWeb", component_property="value"),
-              Input(component_id="mntFishProductsWeb", component_property="value"),
-              Input(component_id="mntSweetProductsWeb", component_property="value"),
-              Input(component_id="numCatalogPurchasesWeb", component_property="value"),
+              Input(component_id="mntFishProductsWeb",
+                    component_property="value"),
+              Input(component_id="mntSweetProductsWeb",
+                    component_property="value"),
+              Input(component_id="numCatalogPurchasesWeb",
+                    component_property="value"),
               Input(component_id="kidhomeWeb", component_property="value"),
-              Input(component_id="numWebVisitsMonthWeb", component_property="value"),
+              Input(component_id="numWebVisitsMonthWeb",
+                    component_property="value"),
               )
-def inferencia_Web(n_clicks, mntWinesWeb, mntMeatProductsWeb, incomeWeb, numStorePurchasesWeb, mntGoldProdsWeb, mntFruitsWeb
-, mntFishProductsWeb, mntSweetProductsWeb, numCatalogPurchasesWeb, kidhomeWeb, numWebVisitsMonthWeb):
+def inferencia_Web(n_clicks, mntWinesWeb, mntMeatProductsWeb, incomeWeb, numStorePurchasesWeb, mntGoldProdsWeb, mntFruitsWeb, mntFishProductsWeb, mntSweetProductsWeb, numCatalogPurchasesWeb, kidhomeWeb, numWebVisitsMonthWeb):
     if ("submitWeb" == ctx.triggered_id):
         web_model = joblib.load("../persistencia/page_web_model.joblib")
 
@@ -617,24 +888,29 @@ def inferencia_Web(n_clicks, mntWinesWeb, mntMeatProductsWeb, incomeWeb, numStor
         return (f"El cliente que ingreso podria realizar {result} compras al mes")
 
 
-
 @app.callback(Output(component_id="div-response-store", component_property="children"),
               Input(component_id='submitStore', component_property='n_clicks'),
               Input(component_id="mntWinesStore", component_property="value"),
-              Input(component_id="mntMeatProductsStore", component_property="value"),
+              Input(component_id="mntMeatProductsStore",
+                    component_property="value"),
               Input(component_id="incomeStore", component_property="value"),
-              Input(component_id="numWebPurchasesStore", component_property="value"),
-              Input(component_id="mntGoldProdsStore", component_property="value"),
+              Input(component_id="numWebPurchasesStore",
+                    component_property="value"),
+              Input(component_id="mntGoldProdsStore",
+                    component_property="value"),
               Input(component_id="mntFruitsStore", component_property="value"),
-              Input(component_id="mntFishProductsStore", component_property="value"),
-              Input(component_id="mntSweetProductsStore", component_property="value"),
-              Input(component_id="numCatalogPurchasesStore", component_property="value"),
+              Input(component_id="mntFishProductsStore",
+                    component_property="value"),
+              Input(component_id="mntSweetProductsStore",
+                    component_property="value"),
+              Input(component_id="numCatalogPurchasesStore",
+                    component_property="value"),
               Input(component_id="kidhomeStore", component_property="value"),
               Input(component_id="numWebVisitsMonthStore", component_property="value"))
-def inferencia_store(n_clicks, mntWinesStore, mntMeatProductsStore, incomeStore, numWebPurchasesStore, mntGoldProdsStore, mntFruitsStore
-, mntFishProductsStore, mntSweetProductsStore, numCatalogPurchasesStore, kidhomeStore, numWebVisitsMonthStore):
+def inferencia_store(n_clicks, mntWinesStore, mntMeatProductsStore, incomeStore, numWebPurchasesStore, mntGoldProdsStore, mntFruitsStore, mntFishProductsStore, mntSweetProductsStore, numCatalogPurchasesStore, kidhomeStore, numWebVisitsMonthStore):
     if ("submitStore" == ctx.triggered_id):
-        store_model = joblib.load("../persistencia/physical_store_model.joblib")
+        store_model = joblib.load(
+            "../persistencia/physical_store_model.joblib")
 
         input = pd.DataFrame()
 
@@ -654,8 +930,10 @@ def inferencia_store(n_clicks, mntWinesStore, mntMeatProductsStore, incomeStore,
 
         return (f"El cliente que ingreso podria realizar {result} compras al mes")
 
+
 @app.callback(Output(component_id="div-response-campaign-aceptation", component_property="children"),
-              Input(component_id='submitCampaignAceptation', component_property='n_clicks'),
+              Input(component_id='submitCampaignAceptation',
+                    component_property='n_clicks'),
               Input(component_id='Year_Birth', component_property='value'),
               Input(component_id='Education', component_property='value'),
               Input(component_id='Marital_Status', component_property='value'),
@@ -665,15 +943,23 @@ def inferencia_store(n_clicks, mntWinesStore, mntMeatProductsStore, incomeStore,
               Input(component_id='Recency', component_property='value'),
               Input(component_id='MntWines', component_property='value'),
               Input(component_id='MntFruits', component_property='value'),
-              Input(component_id='MntMeatProducts', component_property='value'),
-              Input(component_id='MntFishProducts', component_property='value'),
-              Input(component_id='MntSweetProducts', component_property='value'),
+              Input(component_id='MntMeatProducts',
+                    component_property='value'),
+              Input(component_id='MntFishProducts',
+                    component_property='value'),
+              Input(component_id='MntSweetProducts',
+                    component_property='value'),
               Input(component_id='MntGoldProds', component_property='value'),
-              Input(component_id='MntDealsPurchases', component_property='value'),
-              Input(component_id='NumWebPurchases', component_property='value'),
-              Input(component_id='NumCatalogPurchases', component_property='value'),
-              Input(component_id='NumStorePurchases', component_property='value'),
-              Input(component_id='NumWebVisitsMonth', component_property='value'),
+              Input(component_id='MntDealsPurchases',
+                    component_property='value'),
+              Input(component_id='NumWebPurchases',
+                    component_property='value'),
+              Input(component_id='NumCatalogPurchases',
+                    component_property='value'),
+              Input(component_id='NumStorePurchases',
+                    component_property='value'),
+              Input(component_id='NumWebVisitsMonth',
+                    component_property='value'),
               Input(component_id='AcceptedCmp3', component_property='value'),
               Input(component_id='AcceptedCmp4', component_property='value'),
               Input(component_id='AcceptedCmp5', component_property='value'),
@@ -687,7 +973,8 @@ def CampainAceptation(n_clicks, Year_Birth, Education, Marital_Status, Income, K
                       NumWebPurchases, NumCatalogPurchases, NumStorePurchases, NumWebVisitsMonth, AcceptedCmp3,
                       AcceptedCmp4, AcceptedCmp5, AcceptedCmp1, AcceptedCmp2, Complain, Z_CostContact, Z_Revenue):
     if ("submitCampaignAceptation" == ctx.triggered_id):
-        campaing_aceptation_model = joblib.load("../model/Giovanni/ClientePropensoAceptarNuevaCampaña.joblib")
+        campaing_aceptation_model = joblib.load(
+            "../model/Giovanni/ClientePropensoAceptarNuevaCampaña.joblib")
         input = pd.DataFrame()
         input["Year_Birth"] = [Year_Birth]
         input["Education"] = [Education]
@@ -724,8 +1011,10 @@ def CampainAceptation(n_clicks, Year_Birth, Education, Marital_Status, Income, K
 
         return (f"El cliente que ingreso podria {result} aceptar una próxima campaña")
 
+
 @app.callback(Output(component_id="div-response-client-income-perfilation", component_property="children"),
-              Input(component_id='submitClientIncomePerfilation', component_property='n_clicks'),
+              Input(component_id='submitClientIncomePerfilation',
+                    component_property='n_clicks'),
               Input(component_id='Income', component_property='value'),
               Input(component_id='YoungHome', component_property='value'),
               Input(component_id='MntTotal', component_property='value'))
@@ -738,6 +1027,7 @@ def clientIncomePerfilation(n_clicks, Income, YoungHome, MntTotal):
         input["MntTotal"] = [MntTotal]
         #result = campaing_aceptation_model.predict(input)[0]
         return ("Sisa mano")
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)

@@ -1021,13 +1021,13 @@ def CampainAceptation(n_clicks, Year_Birth, Education, Marital_Status, Income, K
               Input(component_id='MntTotal', component_property='value'))
 def clientIncomePerfilation(n_clicks, Income, YoungHome, MntTotal):
     if ("submitClientIncomePerfilation" == ctx.triggered_id):
-        #clientPerfilationModel = joblib.load("../")
+        clientPerfilationModel = joblib.load("../persistencia/Objetivo4.joblib")
         input = pd.DataFrame()
         input["Income"] = [Income]
         input["YoungHome"] = [YoungHome]
         input["MntTotal"] = [MntTotal]
-        #result = campaing_aceptation_model.predict(input)[0]
-        return ("Sisa mano")
+        result = clientPerfilationModel.predict(input)[0]
+        return (str(result))
 
 
 if __name__ == '__main__':
